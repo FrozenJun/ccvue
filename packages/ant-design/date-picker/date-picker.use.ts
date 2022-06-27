@@ -1,0 +1,16 @@
+import { DatePickerAdapter } from './date-picker.adapter'
+import { computed, ComputedRef, SetupContext } from 'vue'
+import { useModelValue } from '@/core/utils/hooks/useModelValue'
+
+interface UseDatePickerOpt {
+  attrs: ComputedRef<DatePickerAdapter>
+  props: Record<string, any>
+  ctx: SetupContext<any>
+}
+
+export const useDatePicker = ({ attrs, props, ctx }: UseDatePickerOpt) => {
+
+  useModelValue({ props, attrs, ctx })
+  const output = computed(() => ({}))
+  return { output }
+}
